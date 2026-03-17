@@ -1,0 +1,358 @@
+:root {
+  --bg: #060606;
+  --bg-soft: #101010;
+  --panel: rgba(11, 11, 11, 0.82);
+  --panel-strong: rgba(16, 16, 16, 0.94);
+  --line: rgba(224, 194, 125, 0.18);
+  --line-strong: rgba(224, 194, 125, 0.34);
+  --text: #f5efe2;
+  --muted: #bfb4a0;
+  --gold: #dfc08b;
+  --gold-strong: #f2d7a3;
+  --shadow: 0 24px 80px rgba(0, 0, 0, 0.48);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(199, 160, 89, 0.22), transparent 30%),
+    radial-gradient(circle at 80% 18%, rgba(214, 176, 106, 0.12), transparent 24%),
+    linear-gradient(180deg, #16110a 0%, #090909 28%, #050505 100%);
+  color: var(--text);
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+p,
+li,
+td,
+th {
+  line-height: 1.75;
+}
+
+.page-shell {
+  position: relative;
+  width: min(1200px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 40px 0 72px;
+}
+
+.ambient {
+  position: fixed;
+  inset: auto;
+  width: 18rem;
+  height: 18rem;
+  border-radius: 999px;
+  filter: blur(90px);
+  opacity: 0.18;
+  pointer-events: none;
+}
+
+.ambient-left {
+  top: 8rem;
+  left: -4rem;
+  background: #c89f5c;
+}
+
+.ambient-right {
+  top: 32rem;
+  right: -6rem;
+  background: #8c6a35;
+}
+
+.panel {
+  position: relative;
+  margin-bottom: 22px;
+  padding: 32px;
+  border: 1px solid var(--line);
+  background: linear-gradient(180deg, rgba(17, 17, 17, 0.9), rgba(7, 7, 7, 0.88));
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
+}
+
+.panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  pointer-events: none;
+}
+
+.hero-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(280px, 0.8fr);
+  gap: 28px;
+  padding-top: 40px;
+}
+
+.eyebrow,
+.card-kicker,
+.data-label,
+.problem-index,
+.section-header span {
+  color: var(--gold);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+}
+
+.hero-copy h1,
+.section-header h2,
+.decision-box strong,
+.formula-box strong,
+.price-box strong,
+.data-card strong {
+  font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+}
+
+.hero-copy h1 {
+  margin: 12px 0 18px;
+  font-size: clamp(2.7rem, 7vw, 5.8rem);
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+  max-width: 12ch;
+}
+
+.hero-lead {
+  max-width: 60ch;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.primary-link,
+.secondary-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 18px;
+  border: 1px solid var(--line-strong);
+  transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+}
+
+.primary-link {
+  background: linear-gradient(135deg, rgba(223, 192, 139, 0.16), rgba(223, 192, 139, 0.05));
+}
+
+.secondary-link {
+  color: var(--muted);
+}
+
+.primary-link:hover,
+.secondary-link:hover {
+  transform: translateY(-2px);
+  border-color: rgba(242, 215, 163, 0.48);
+}
+
+.hero-aside,
+.highlight-grid,
+.problem-grid,
+.split-layout,
+.emphasis-content,
+.final-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.hero-aside {
+  align-content: start;
+}
+
+.data-card,
+.quote-card,
+.highlight-card,
+.problem-card,
+.formula-box,
+.burn-card,
+.price-box,
+.decision-box {
+  padding: 22px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.data-card ul,
+.check-list,
+.action-list,
+.audience-list,
+.problem-card ul {
+  padding-left: 18px;
+  margin: 14px 0 0;
+}
+
+.quote-card p,
+.key-point-statement,
+.emphasis-title,
+.decision-box p {
+  font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+}
+
+.quote-card p {
+  font-size: 1.4rem;
+}
+
+.section-header {
+  display: grid;
+  grid-template-columns: 68px minmax(0, 1fr);
+  gap: 18px;
+  align-items: start;
+  margin-bottom: 24px;
+}
+
+.section-header h2 {
+  margin: 0;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  line-height: 1.08;
+}
+
+.section-header p,
+.section-note,
+.data-card,
+.highlight-card p,
+.problem-card li,
+.formula-box p,
+.price-box p,
+.decision-box p,
+.burn-card p,
+.check-list,
+.action-list {
+  color: var(--muted);
+}
+
+.key-point-box {
+  display: grid;
+  gap: 24px;
+}
+
+.key-point-statement {
+  margin: 0;
+  max-width: 22ch;
+  font-size: clamp(2rem, 4vw, 3.1rem);
+  line-height: 1.1;
+}
+
+.highlight-grid,
+.problem-grid,
+.split-layout,
+.emphasis-content,
+.final-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.problem-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.problem-card h3,
+.burn-card p:first-of-type {
+  margin: 10px 0 0;
+  color: var(--text);
+}
+
+.formula-box strong,
+.price-box strong,
+.decision-box strong,
+.data-card strong,
+.emphasis-title {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--gold-strong);
+  font-size: 1.35rem;
+  line-height: 1.3;
+}
+
+.emphasis-panel {
+  background:
+    linear-gradient(180deg, rgba(40, 30, 12, 0.96), rgba(8, 8, 8, 0.96)),
+    radial-gradient(circle at top right, rgba(223, 192, 139, 0.12), transparent 32%);
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 16px 14px;
+  text-align: left;
+  border-bottom: 1px solid var(--line);
+}
+
+th {
+  color: var(--gold);
+  font-weight: 500;
+}
+
+td:first-child {
+  color: var(--text);
+  width: 20%;
+}
+
+@media (max-width: 960px) {
+  .hero-panel,
+  .highlight-grid,
+  .problem-grid,
+  .split-layout,
+  .emphasis-content,
+  .final-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-copy h1 {
+    max-width: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .page-shell {
+    width: min(100% - 20px, 1200px);
+    padding-top: 16px;
+    padding-bottom: 36px;
+  }
+
+  .panel {
+    padding: 22px 18px;
+  }
+
+  .section-header {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .key-point-statement {
+    font-size: 1.8rem;
+  }
+
+  th,
+  td {
+    min-width: 180px;
+  }
+}
